@@ -1,4 +1,4 @@
-package com.github._knose1.error {
+package com.github.knose1.error {
 	/**
 	 * ...
 	 * @author Knose1

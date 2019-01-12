@@ -1,5 +1,5 @@
-package com.github._knose1.timer {
-	import com.github._knose1.error.Warning;
+package com.github.knose1.timer {
+	import com.github.knose1.error.Warning;
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
