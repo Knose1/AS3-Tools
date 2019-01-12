@@ -22,22 +22,24 @@ package com.github._knose1.timer {
 	 */
 	[Event(name="tick", type="com.github._knose1.timer.FrameCounterEvent")] 
 	
+	/*
+	 * Fonctionnement du FrameCounter :
+	 *		
+	 *		Si totalLoop = 2 et delay = 2 :
+	 *		
+	 *		voila le trace(_currentFrame, _currentLoop) avec des commentaires en plus
+	 *		0 0	//Etat initial au start
+	 *		1 0	//Event Tick
+	 *		2 0	//Event Tick && Event TIMER
+	 *		1 1 //Event Tick
+	 *		2 1 //Event Tick && Event TIMER && TIMER_COMPLETE 
+	 */
+	
 	/**
 	 * Un compteur de frame sur le modèle de la classe Timer
 	 * @author Knose1
 	 */
 	public class FrameCounter extends EventDispatcher {
-		/* Fonctionnement du FrameCounter :
-			
-			Si totalLoop = 2 et delay = 2 :
-			
-			voila le trace(_currentFrame, _currentLoop) avec des commentaires en plus
-			0 0	//Etat initial au start
-			1 0
-			2 0	//Event TIMER
-			1 1
-			2 1 //Event TIMER && TIMER_COMPLETE
-		*/
 		
 		/**
 		 * Un stage utilisé pour compter les frames
@@ -50,8 +52,15 @@ package com.github._knose1.timer {
 		public function get totalLoop():uint {
 			 return _totalLoop;
 		 }
+		
+		/**
+		 * @throws Warning stop() must be called before changing timer
+		 */
 		public function set totalLoop(pValue:uint):void {
-			if (running) return trace(new Warning("stop() must be called before changing totalLoop").getStackTrace());
+			if (running) {
+				trace(new Warning("stop() must be called before changing totalLoop").getStackTrace());
+				return;
+			}
 			
 			_totalLoop = pValue;
 		}
@@ -71,8 +80,14 @@ package com.github._knose1.timer {
 		public function get delay():uint {
 			 return _delay;
 		}
+		/**
+		 * @throws Warning stop() must be called before changing timer
+		 */
 		public function set delay(pValue:uint):void {
-			if (running) return trace(new Warning("stop() must be called before changing timer").getStackTrace());
+			if (running) {
+				trace(new Warning("stop() must be called before changing timer").getStackTrace());
+				return;
+			}
 			
 			_delay = Math.max(1,pValue);
 		}
@@ -211,6 +226,9 @@ package com.github._knose1.timer {
 			//Les event sont à la fin pour que au stop, les objects event.target aient running=false
 		}
 		
+		/**
+		 * @inheritDoc 
+		 */
 		override public function toString():String {
 			return "[FrameCounter totalLoop=" + totalLoop + " currentLoop=" + currentLoop + " delay=" + delay + " currentFrame=" + currentFrame + " running=" + running + "]";
 		}
