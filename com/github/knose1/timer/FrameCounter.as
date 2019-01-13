@@ -48,14 +48,11 @@ package com.github.knose1.timer {
 
 		/**
 		 * Nombre de répétitions à faire; si totalLoop vaux 0 alors la loop se répettera à l'infini
+		 * @throws Warning stop() must be called before changing totalLoop (setter)
 		 */
 		public function get totalLoop():uint {
 			 return _totalLoop;
-		 }
-		
-		/**
-		 * @throws Warning stop() must be called before changing timer
-		 */
+		}
 		public function set totalLoop(pValue:uint):void {
 			if (running) {
 				trace(new Warning("stop() must be called before changing totalLoop").getStackTrace());
@@ -76,16 +73,14 @@ package com.github.knose1.timer {
 
 		/**
 		 * Nombre de frames avant qu'une boucle soit faite
+		 * @throws Warning stop() must be called before changing delay (setter)
 		 */
 		public function get delay():uint {
 			 return _delay;
 		}
-		/**
-		 * @throws Warning stop() must be called before changing timer
-		 */
 		public function set delay(pValue:uint):void {
 			if (running) {
-				trace(new Warning("stop() must be called before changing timer").getStackTrace());
+				trace(new Warning("stop() must be called before changing delay").getStackTrace());
 				return;
 			}
 			
@@ -113,10 +108,19 @@ package com.github.knose1.timer {
 		 * Indentement automatique :
 		 * - Si vrai, l'instance créra une gameloop qui indentera automatiquement le currentFrame.
 		 * - Si faux, il faudra appeller gotoNextFrame() dans votre gameloop 
+		 * @throws Warning stop() must be called before changing autoIndent (setter)
 		 */
 		public function get autoIndent():Boolean {
 			return _autoIndent;
 		}
+		public function set autoIndent(pValue:Boolean):Boolean {
+			if (running) {
+				trace(new Warning("stop() must be called before changing autoIndent").getStackTrace());
+				return;
+			}
+			_autoIndent = pValue;
+		}
+		
 		private var _autoIndent:Boolean;
 		
 		/**
