@@ -113,7 +113,7 @@ package com.github.knose1.timer {
 		public function get autoIndent():Boolean {
 			return _autoIndent;
 		}
-		public function set autoIndent(pValue:Boolean):Boolean {
+		public function set autoIndent(pValue:Boolean):void {
 			if (running) {
 				trace(new Warning("stop() must be called before changing autoIndent").getStackTrace());
 				return;
