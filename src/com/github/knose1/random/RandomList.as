@@ -5,7 +5,7 @@ package com.github.knose1.random {
 	 * @see RandomObject
 	 */
 	public class RandomList {
-		Array
+		
 		/**
 		 * Liste des objects choisi aléatoirements en fonction de leur probabilité
 		 */
