@@ -1,4 +1,13 @@
 
 *.docproj
+
 *.as3proj
+
 obj/pmd.old
+
+bin/*
+Main.fla
+obj/FlashDevelop-libsConfig.old
+obj/FlashDevelop-libsConfig.xml
+src/_local/testCode/Main.as
+RECUPERE_Main.fla
