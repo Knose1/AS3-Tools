@@ -6,19 +6,19 @@ package com.github.knose1.timer {
 	
 	/**
 	 * Distribué lorsqu’un objet FrameCounter atteint un intervalle spécifié conformément à la propriété FrameCounter.delay.
-	 * @eventType	com.github._knose1.timer.FrameCounterEvent.TIMER
+	 * @eventType	com.github.knose1.timer.FrameCounterEvent.TIMER
 	 */
 	[Event(name="timer", type="com.github.knose1.timer.FrameCounterEvent")] 
 
 	/**
 	 * Distribué lorsque le traitement du nombre de requêtes défini par Timer.totalLoop est terminé.
-	 * @eventType	com.github._knose1.timer.FrameCounterEvent.TIMER_COMPLETE
+	 * @eventType	com.github.knose1.timer.FrameCounterEvent.TIMER_COMPLETE
 	 */
 	[Event(name="timerComplete", type="com.github.knose1.timer.FrameCounterEvent")] 
 
 	/**
 	 * Distribué à chaque appel de gotoNextFrame.
-	 * @eventType	com.github._knose1.timer.FrameCounterEvent.TICK
+	 * @eventType	com.github.knose1.timer.FrameCounterEvent.TICK
 	 */
 	[Event(name="tick", type="com.github.knose1.timer.FrameCounterEvent")] 
 	
