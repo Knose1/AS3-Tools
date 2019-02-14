@@ -1,26 +1,26 @@
-package com.github.knose1.timer {
-	import com.github.knose1.error.Warning;
+package com.github.knose1.utils.timer {
+	import com.github.knose1.utils.error.Warning;
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	
 	/**
 	 * Distribué lorsqu’un objet FrameCounter atteint un intervalle spécifié conformément à la propriété FrameCounter.delay.
-	 * @eventType	com.github.knose1.timer.FrameCounterEvent.TIMER
+	 * @eventType	com.github.knose1.utils.timer.FrameCounterEvent.TIMER
 	 */
-	[Event(name="timer", type="com.github.knose1.timer.FrameCounterEvent")] 
+	[Event(name="timer", type="com.github.knose1.utils.timer.FrameCounterEvent")] 
 
 	/**
 	 * Distribué lorsque le traitement du nombre de requêtes défini par Timer.totalLoop est terminé.
-	 * @eventType	com.github.knose1.timer.FrameCounterEvent.TIMER_COMPLETE
+	 * @eventType	com.github.knose1.utils.timer.FrameCounterEvent.TIMER_COMPLETE
 	 */
-	[Event(name="timerComplete", type="com.github.knose1.timer.FrameCounterEvent")] 
+	[Event(name="timerComplete", type="com.github.knose1.utils.timer.FrameCounterEvent")] 
 
 	/**
 	 * Distribué à chaque appel de gotoNextFrame.
-	 * @eventType	com.github.knose1.timer.FrameCounterEvent.TICK
+	 * @eventType	com.github.knose1.utils.timer.FrameCounterEvent.TICK
 	 */
-	[Event(name="tick", type="com.github.knose1.timer.FrameCounterEvent")] 
+	[Event(name="tick", type="com.github.knose1.utils.timer.FrameCounterEvent")] 
 	
 	/*
 	 * Fonctionnement du FrameCounter :

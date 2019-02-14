@@ -1,4 +1,4 @@
-package com.github.knose1.async {
+package com.github.knose1.utils.async {
 	/**
 	 * Create an async function
 	 * 

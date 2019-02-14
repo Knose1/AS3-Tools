@@ -1,4 +1,4 @@
-package com.github.knose1.timer {
+package com.github.knose1.utils.timer {
 	import flash.events.Event;
 	
 	/**

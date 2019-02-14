@@ -1,4 +1,4 @@
-package com.github.knose1.random {
+package com.github.knose1.utils.random {
 	/**
 	 * Object random ayant une probabilité d'être choisi
 	 * @author Knose1
