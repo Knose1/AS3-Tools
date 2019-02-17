@@ -120,14 +120,17 @@ package com.github.knose1.utils.console {
 			var lCutIndex:int;
 			var lText:String = "";
 			do {
-				lCutIndex = (pText.indexOf("/n") + 1 || pText.indexOf("/r") + 1 || maxLineCount + 1) - 1;
+				(lCutIndex = pText.indexOf("\n") + 1) || (lCutIndex = pText.indexOf("\r") + 1) || (lCutIndex = maxCharByLine + 1);
 				
+				lCutIndex--;
+				
+				lCutIndex = Math.min(lCutIndex, pText.length)
 				
 				addLine(pText.slice(0, lCutIndex), pColor);
 				
-				pText = pText.slice(lCutIndex);
+				pText = pText.slice(lCutIndex).replace("\n", "").replace("\r", ""); //on retire le 1er \n ou \r
 			}
-			while (pText.length > maxCharByLine)
+			while (pText.length != 0)
 			
 			var lContainer:Sprite = container;
 		}
@@ -154,7 +157,7 @@ package com.github.knose1.utils.console {
 				fieldList[i].y = lineHeight * i;
 			}
 			
-			lText.width = lText.textWidth * 2;
+			lText.width = 10000;
 			
 			container.addChild(lText);
 		}
