@@ -5,7 +5,7 @@ package com.github.knose1.utils.random {
 	 */
 	public class RandomObject {
 		
-		public var currentObject:Object;
+		public var currentObject:*;
 		public var proba:Number;
 		
 		/**
@@ -13,7 +13,7 @@ package com.github.knose1.utils.random {
 		 * @param	pObject
 		 * @param	pProba
 		 */
-		public function RandomObject(pObject:Object, pProba:Number) {
+		public function RandomObject(pObject:*, pProba:Number) {
 			currentObject = pObject;
 			proba = pProba;
 		}

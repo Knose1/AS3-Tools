@@ -23,7 +23,6 @@ package com.github.knose1.utils.random {
 		 */
 		public function RandomList(...rest) {
 			push.apply(this, rest);
-			
 		}
 		
 		/**
@@ -62,7 +61,7 @@ package com.github.knose1.utils.random {
 		 * Choisi et retourne un object choisi aléatoirement en fonction de sa probabilité
 		 * @return L'object choisi aléatoirement
 		 */
-		public function getRandomObject():Object {
+		public function getRandomObject():* {
 			if (PROBA.length == 0) return undefined;
 			
 			var lRandom:Number = Math.random() * totalProba;

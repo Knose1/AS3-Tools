@@ -10,5 +10,6 @@ Main.fla
 obj/FlashDevelop-libsConfig.old
 obj/FlashDevelop-libsConfig.xml
 _local/*
+_inutile/*
 private/*
 RECUPERE_Main.fla
