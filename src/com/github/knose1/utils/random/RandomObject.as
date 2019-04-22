@@ -18,6 +18,14 @@ package com.github.knose1.utils.random {
 			proba = pProba;
 		}
 		
+		public function toString():String {
+			return "[RandomObject currentObject=" + currentObject + " proba=" + proba + "]";
+		}
+		
+		public function clone():RandomObject {
+			return new RandomObject(currentObject, proba);
+		}
+		
 	}
 
 }
