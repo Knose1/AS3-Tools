@@ -84,7 +84,7 @@ package com.github.knose1.utils.console {
 		
 		
 		/**
-		 * Constructeur de la classe (singleton)
+		 * Constructeur de la classe
 		 */
 		public function Console() {
 			super();
@@ -152,6 +152,7 @@ package com.github.knose1.utils.console {
 			lText.scaleX = -1;
 			
 			fieldList.unshift(lText);
+			if (fieldList.length > maxLineCount) popLine();
 			
 			for (var i:int = fieldList.length - 1; i >= 0; i--) {
 				fieldList[i].y = lineHeight * i;
@@ -160,6 +161,12 @@ package com.github.knose1.utils.console {
 			lText.width = 10000;
 			
 			container.addChild(lText);
+			
+		}
+		
+		protected function popLine():void {
+			var lTextField:TextField = fieldList.pop();
+			container.removeChild(lTextField);
 		}
 		
 	}

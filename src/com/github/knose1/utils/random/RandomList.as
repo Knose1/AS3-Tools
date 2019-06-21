@@ -9,7 +9,8 @@ package com.github.knose1.utils.random {
 		/**
 		 * Liste des objects choisi aléatoirements en fonction de leur probabilité
 		 */
-		protected const LIST:Vector.<RandomObject> = new Vector.<RandomObject>();
+		public const LIST:Vector.<RandomObject> = new Vector.<RandomObject>();
+		
 		
 		/**
 		 * Constructeur de la class

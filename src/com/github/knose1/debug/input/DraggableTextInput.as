@@ -36,7 +36,7 @@ package com.github.knose1.debug.input {
 			}
 		}
 		
-		public function DraggableTextInput(pType:String) {
+		public function DraggableTextInput(pType:uint) {
 			super();
 			
 			type = pType;
